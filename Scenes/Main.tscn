@@ -1,0 +1,172 @@
+[gd_scene load_steps=25 format=3 uid="uid://cvfhapkhpkoaf"]
+
+[ext_resource type="PackedScene" uid="uid://cpmokfsmky3pa" path="res://Scenes/Player.tscn" id="1_r150o"]
+[ext_resource type="PackedScene" uid="uid://b0uafo3b7p4xc" path="res://Objects/Guns/P250.tscn" id="2_idj7w"]
+[ext_resource type="Texture2D" uid="uid://25g6eo3y425x" path="res://PH_Textures/Purple/texture_09.png" id="2_kln2b"]
+[ext_resource type="PackedScene" uid="uid://tqbxlkgu2ylf" path="res://Objects/Map/Door.tscn" id="4_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://dyxlkyac63exi" path="res://Objects/Guns/M24.tscn" id="5_bmxlf"]
+[ext_resource type="PackedScene" uid="uid://bsc7ltilnibed" path="res://Objects/Guns/M4.tscn" id="5_pbw6q"]
+[ext_resource type="Texture2D" uid="uid://c1k8qn626mhdx" path="res://PH_Textures/Green/texture_09.png" id="6_v1gob"]
+[ext_resource type="PackedScene" uid="uid://dgrimtsurb2vo" path="res://Objects/Items/key.tscn" id="7_jw32o"]
+[ext_resource type="Texture2D" uid="uid://cky3lhaa6nprp" path="res://PH_Textures/Red/texture_10.png" id="8_vy5pj"]
+[ext_resource type="PackedScene" uid="uid://xt21uw7ybdsj" path="res://Objects/Map/Pot.tscn" id="9_4kpch"]
+[ext_resource type="PackedScene" uid="uid://bj41y8mgn600q" path="res://Objects/Map/Elevator.tscn" id="9_vy5pj"]
+[ext_resource type="PackedScene" uid="uid://exf3lb8t6d4x" path="res://Objects/Guns/Browning.tscn" id="12_grg3l"]
+[ext_resource type="PackedScene" uid="uid://bi4pe0wm4a0rq" path="res://Scenes/NPC.tscn" id="13_frkhe"]
+[ext_resource type="Texture2D" uid="uid://co3awki83vyi2" path="res://PH_Textures/Orange/texture_09.png" id="14_1p5hy"]
+[ext_resource type="PackedScene" uid="uid://3682hmwkoi58" path="res://Objects/Map/Window.tscn" id="15_h1m7h"]
+[ext_resource type="PackedScene" uid="uid://dhu1o0sk11rpn" path="res://Scenes/Enemy.tscn" id="16_erwvk"]
+[ext_resource type="PackedScene" uid="uid://d3bgts6pg1klc" path="res://Objects/Collisions/TrespassingArea.tscn" id="17_2w5on"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4kpch"]
+albedo_texture = ExtResource("8_vy5pj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jw32o"]
+albedo_texture = ExtResource("6_v1gob")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1m7h"]
+albedo_texture = ExtResource("14_1p5hy")
+
+[sub_resource type="Environment" id="Environment_idj7w"]
+background_mode = 1
+background_color = Color(0.857254, 0.305112, 0.243677, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.675957, 0.448519, 5.77569e-07, 1)
+ambient_light_energy = 0.5
+fog_enabled = true
+fog_density = 0.02
+fog_sky_affect = 0.463
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2w5on"]
+albedo_texture = ExtResource("2_kln2b")
+uv1_scale = Vector3(1.495, 1.51, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rgh2o"]
+material = SubResource("StandardMaterial3D_2w5on")
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pbw6q"]
+size = Vector3(50, 1, 50)
+
+[node name="Main" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_r150o")]
+
+[node name="Pot" parent="." instance=ExtResource("9_4kpch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.2893, 0.031948, -5.78429)
+
+[node name="Pot2" parent="." instance=ExtResource("9_4kpch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.2893, 0.031948, -4.78429)
+required_strength = 5
+
+[node name="Guns" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -6)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Guns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.99, 0)
+size = Vector3(6, 1, 6)
+material = SubResource("StandardMaterial3D_4kpch")
+
+[node name="M4" parent="Guns" instance=ExtResource("5_pbw6q")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.603873, -0.294105, -2.00994)
+currentAmmo = 30
+magazineSize = 30
+extraAmmo = 240
+
+[node name="P250" parent="Guns" instance=ExtResource("2_idj7w")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.49071, -0.327973, -2.0167)
+currentAmmo = 12
+magazineSize = 12
+extraAmmo = 36
+
+[node name="M24" parent="Guns" instance=ExtResource("5_bmxlf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.01019, -0.279541, -2)
+currentAmmo = 5
+magazineSize = 5
+extraAmmo = 20
+
+[node name="Browning" parent="Guns" instance=ExtResource("12_grg3l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.20275, -0.251112, -2)
+currentAmmo = 2
+magazineSize = 2
+extraAmmo = 12
+
+[node name="Door" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -6)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.99, 0)
+size = Vector3(6, 1, 6)
+material = SubResource("StandardMaterial3D_jw32o")
+
+[node name="Door" parent="Door" instance=ExtResource("4_rgh2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.398015, -1)
+
+[node name="StaticBody3D" parent="Door/Door" index="0"]
+locked = true
+Key = "Door Key"
+
+[node name="Door2" parent="Door" instance=ExtResource("4_rgh2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.398015, -1)
+
+[node name="Key" parent="Door" instance=ExtResource("7_jw32o")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0.777765, 0.601985, -1)
+collision_layer = 5
+collision_mask = 1
+key = "Door Key"
+object = "Door Key"
+
+[node name="NPCs" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.99, 0)
+size = Vector3(6, 1, 6)
+material = SubResource("StandardMaterial3D_h1m7h")
+
+[node name="NPC" parent="NPCs" instance=ExtResource("13_frkhe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05338, 0.5, 1.58368)
+object = "Guard"
+speech = Array[String](["NPC 1", "Texto Aleatorio do NPC 1", "Texto Texto Texto", "Yipie"])
+
+[node name="NPC2" parent="NPCs" instance=ExtResource("13_frkhe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.94662, 0.5, 1.58368)
+object = "Target"
+speech = Array[String](["NPC 2", "Agagaga", "Texto Aleatorio npc2", "pinto !"])
+
+[node name="Window" parent="NPCs" instance=ExtResource("15_h1m7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05218, 0.5, -2.79882)
+
+[node name="Window2" parent="NPCs" instance=ExtResource("15_h1m7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.94782, 0.5, -2.79882)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_idj7w")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3, 0)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("BoxMesh_rgh2o")
+skeleton = NodePath("../../root/@EditorNode@21269/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11479/@VSplitContainer@11131/@HSplitContainer@11133/@HSplitContainer@11135/@Control@11136/@SubViewportContainer@11137/@SubViewport@11138/Main")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("BoxShape3D_pbw6q")
+
+[node name="Elevator" parent="." instance=ExtResource("9_vy5pj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -10, -0.4, -6)
+Buttons = 5
+distance = 2.0
+
+[node name="Enemy" parent="." instance=ExtResource("16_erwvk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9, 0.5, 0)
+
+[node name="TrespassingArea" parent="." instance=ExtResource("17_2w5on")]
+transform = Transform3D(5.32303, 0, 0, 0, 1, 0, 0, 0, 4.6, 9.03819, 0, 5.63717)
+
+[editable path="Door/Door"]
+[editable path="Door/Door2"]

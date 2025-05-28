@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=AppName
+Comment=AppDescription
+Exec=Exec
+Icon=Icon
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;
+

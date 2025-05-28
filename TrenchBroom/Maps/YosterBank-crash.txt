@@ -1,0 +1,12 @@
+OS:	Arch Linux
+Qt:	6.7.0
+GL_VENDOR:	NVIDIA Corporation
+GL_RENDERER:	NVIDIA GeForce RTX 4060/PCIe/SSE2
+GL_VERSION:	4.6.0 NVIDIA 570.144
+TrenchBroom Version:	2025.3-RC4
+TrenchBroom Build:	v2025.3-RC4 Release Linux
+Reason:	/home/runner/work/TrenchBroom/TrenchBroom/common/src/ui/ScaleObjectsTool.cpp line 1021: Condition '!m_resizing' failed (must not be resizing already)
+Stack trace:
+[0x7ffe1520b030]
+[0x7ffe1520b138]
+

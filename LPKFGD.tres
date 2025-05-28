@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=3 format=3 uid="uid://b6pcb6rstjnqk"]
+
+[ext_resource type="Resource" uid="uid://crgpdahjaj" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="1_22x0k"]
+[ext_resource type="Script" uid="uid://c24eu5vdvlq8w" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="1_okwll"]
+
+[resource]
+script = ExtResource("1_okwll")
+export_file = false
+target_map_editor = 1
+fgd_name = "LPK"
+base_fgd_files = Array[Resource]([ExtResource("1_22x0k")])
+entity_definitions = Array[Resource]([])
+metadata/_custom_type_script = "uid://c24eu5vdvlq8w"

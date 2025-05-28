@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c8tks6ofwagrw"]
+
+[ext_resource type="Texture2D" uid="uid://ddt8u38g87qfy" path="res://textures/Tri_Marble_Tile_12-128x128.png" id="1_fjiye"]
+
+[resource]
+albedo_texture = ExtResource("1_fjiye")
+metallic_specular = 0.0
+texture_filter = 2

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3bgts6pg1klc"]
+
+[ext_resource type="Script" uid="uid://c1j7rchhj3c8g" path="res://Scripts/Trespassing.gd" id="1_bub4a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g64ws"]
+transparency = 1
+albedo_color = Color(1, 0.443137, 0, 0.843137)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bub4a"]
+material = SubResource("StandardMaterial3D_g64ws")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xmur0"]
+
+[node name="TrespassingArea" type="Node3D"]
+script = ExtResource("1_bub4a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_bub4a")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_xmur0")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

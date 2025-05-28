@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1cm3yhwplp7v"]
+
+[ext_resource type="Texture2D" uid="uid://dchnojhccweq2" path="res://textures/GroundTextureCS.png" id="1_yt0ax"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ng2te"]
+albedo_texture = ExtResource("1_yt0ax")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ex6hs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_48dt2"]
+albedo_texture = ExtResource("1_yt0ax")
+
+[node name="House" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10.01, 0, 0, 0, 5.52, 0, 0, 0, 6.4, 0, 2, 0)
+material_override = SubResource("StandardMaterial3D_ng2te")
+mesh = SubResource("BoxMesh_ex6hs")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.82379, 0, 0, 0, 3.90323, 4.52548, 0, -3.90323, 4.52548, 0, 3, 0)
+material_override = SubResource("StandardMaterial3D_48dt2")
+mesh = SubResource("BoxMesh_ex6hs")

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cakdevdq75l2p"]
+
+[ext_resource type="Texture2D" uid="uid://c5voe4giwdr3u" path="res://textures/darkwood2.jpg" id="1_kupi3"]
+
+[resource]
+albedo_texture = ExtResource("1_kupi3")
+metallic_specular = 0.0
+texture_filter = 2
