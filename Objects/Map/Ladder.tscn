@@ -37,6 +37,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.37114e-09, 4.6, 0.4)
 
 [node name="TopDrop" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.37114e-09, 4.7, 0.4)
-
-[node name="Move" type="Timer" parent="."]
-wait_time = 0.5
