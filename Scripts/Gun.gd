@@ -142,8 +142,7 @@ func _shoot() -> void:
 		# Crosshair randomness
 		crosshair.global_transform.origin += Vector3(
 			randf_range((springArm3D.get_hit_length() / gunRecoil) * -1, (springArm3D.get_hit_length() / gunRecoil)),
-			randf_range(0, (springArm3D.get_hit_length() / gunRecoil)),
-			0
+			randf_range(0, (springArm3D.get_hit_length() / gunRecoil)),0
 		)
 
 		# Recoil

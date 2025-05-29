@@ -9,14 +9,6 @@ extends Control
 
 @onready var upgrades: Panel = $Upgrades
 
-
-@onready var strenghtPlus: Button = $Upgrades/VBoxContainer/Container/Strength/Button
-@onready var strenghtMinus: Button = $Upgrades/VBoxContainer/Container/Strength/Button2
-@onready var SpeedPlus: Button = $Upgrades/VBoxContainer/Container/Speed/Button
-@onready var SpeedMinus: Button = $Upgrades/VBoxContainer/Container/Speed/Button2
-@onready var JumpPlus: Button = $Upgrades/VBoxContainer/Container/Jump/Button
-@onready var JumpMinus: Button = $Upgrades/VBoxContainer/Container/Jump/Button2
-
 # debug
 @onready var state: Label = $"../Debug/VBoxContainer/State"
 @onready var detection: Label = $"../Debug/VBoxContainer/Detection"
@@ -25,9 +17,7 @@ extends Control
 @onready var player: CharacterBody3D = $".."
 
 func _process(_delta: float) -> void:
-	
-	_debugData()
-	
+
 	meters.text = str(int(spring_arm_3d.get_hit_length()))
 	var crosshair_pos = camera.unproject_position(cross_hair.position)
 	cross_hair.global_position = lerp(cross_hair.global_position, gun_target.global_position, 0.3)
@@ -36,27 +26,3 @@ func _process(_delta: float) -> void:
 func  _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed('ui_tab'):
 		upgrades.visible = !upgrades.visible 
-
-func _on_strengthplus_pressed() -> void:
-	PlayerStats.strength += 1
-
-func _on_strengthminus_pressed() -> void:
-	PlayerStats.strength -= 1
-
-func _on_speedplus_pressed() -> void:
-	PlayerStats.speed += 1
-
-func _on_speedminus_pressed() -> void:
-	PlayerStats.speed -= 1
-
-func _on_jumpplus_pressed() -> void:
-	PlayerStats.jump += 1
-
-func _on_jumpminus_pressed() -> void:
-	PlayerStats.jump -= 1
-
-func _debugData():
-	state.text = str("State: " + PlayerStats.state)
-	detection.text = str("Detection: " + PlayerStats.detection)
-	hp.text = str("HP: " + str(PlayerStats.life))
-	speed.text = str("Speed: " +  str(player.SPEED))

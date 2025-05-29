@@ -13,10 +13,13 @@ var open = false
 
 func _interact():
 	if locked:
+		if PlayerStats.lockPick:
+			_unlock()
+		
 		for i in PlayerStats.keys:
 			if i == Key:
-				locked = false
-				unlockDoor.play()
+				_unlock()
+				
 	else:
 		if !AnimPlayer.is_playing():
 			openDoor.play()
@@ -26,3 +29,8 @@ func _interact():
 			else:
 				AnimPlayer.play("open")
 				open = true
+				
+func _unlock():
+		locked = false
+		unlockDoor.play()
+	

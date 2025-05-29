@@ -1,0 +1,11 @@
+res://Scenes/Player.tscn
+res://Scenes/BetterTest.tscn
+res://Objects/Guns/Bullet.tscn
+res://Objects/Map/Window.tscn
+res://Scripts/HUD.gd
+res://Scenes/HudDEBUG.gd
+res://Scripts/PlayerStats.gd
+res://Scripts/ItemsManager.gd
+res://Scripts/Holdable.gd
+res://Scripts/Player.gd
+res://Scripts/Door.gd

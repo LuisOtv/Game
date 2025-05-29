@@ -5,16 +5,13 @@ var oxygen = 100
 
 var money = 100
 
-var strength:= 1
-var speed:= 1
-var jump:= 1
-var inteligence:= 1
+var state := "Normal"
 
 @export_enum("Normal","AlertKnow","AlertUnkown","Fight")
 var detection := "Normal"
 
-var state := "Normal"
-
+var strength := false #moveHeavyObjects
+var lockPick := false #openLockedDoors
 var doubleJump := false #doubleJump
 var insideInfo := false #extraInfoOnScreen
 var FMJ := false #bulletsGoThroWalls

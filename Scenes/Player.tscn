@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=4 uid="uid://cpmokfsmky3pa"]
+[gd_scene load_steps=77 format=4 uid="uid://cpmokfsmky3pa"]
 
 [ext_resource type="Script" uid="uid://cx48b6dj2foil" path="res://Scripts/Player.gd" id="1_xhfnw"]
 [ext_resource type="Script" uid="uid://bjjc8yj3d6gsl" path="res://Scripts/RayCast.gd" id="2_kpjcp"]
@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://dehp1w47irr2h" path="res://PH_Sounds/reloading.mp3" id="19_m0x7a"]
 [ext_resource type="Script" uid="uid://c8xme8mny0575" path="res://Scripts/HUD.gd" id="19_qidb7"]
 [ext_resource type="Script" uid="uid://cjrtoy50fd7ij" path="res://Scripts/TextBox.gd" id="21_u7x0b"]
+[ext_resource type="Script" uid="uid://ciena0pyhylr5" path="res://Scenes/HudDEBUG.gd" id="23_kih0c"]
 [ext_resource type="AudioStream" uid="uid://cua46d0vgs8y7" path="res://PH_Sounds/shotgunReload.mp3" id="24_70hv0"]
 [ext_resource type="Script" uid="uid://7jyu5ohaccm2" path="res://Scripts/DetectionManager.gd" id="28_utwlt"]
 
@@ -568,12 +569,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15375, 0)
 target_position = Vector3(0, 1, 0)
 
 [node name="RightDetect" type="RayCast3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, -0.15375, 0)
-target_position = Vector3(0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15375, 0)
+target_position = Vector3(1.2, 0, 0)
 
 [node name="LeftDetect" type="RayCast3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -0.15375, 0)
-target_position = Vector3(0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15375, 0)
+target_position = Vector3(-1.2, 0, 0)
 
 [node name="StandingCol" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
@@ -1093,6 +1094,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("23_kih0c")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Debug"]
 layout_mode = 1
@@ -1116,6 +1118,50 @@ layout_mode = 2
 text = "HP"
 
 [node name="Speed" type="Label" parent="Debug/VBoxContainer"]
+layout_mode = 2
+text = "Speed"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Debug"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -76.0
+offset_top = -104.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Strength" type="Label" parent="Debug/VBoxContainer2"]
+layout_mode = 2
+text = "State"
+
+[node name="LockPick" type="Label" parent="Debug/VBoxContainer2"]
+layout_mode = 2
+text = "Detection"
+
+[node name="DoubleJump" type="Label" parent="Debug/VBoxContainer2"]
+layout_mode = 2
+text = "HP"
+
+[node name="InsideInfo" type="Label" parent="Debug/VBoxContainer2"]
+layout_mode = 2
+text = "Speed"
+
+[node name="FMJ" type="Label" parent="Debug/VBoxContainer2"]
+layout_mode = 2
+text = "Speed"
+
+[node name="Cloak" type="Label" parent="Debug/VBoxContainer2"]
+layout_mode = 2
+text = "Speed"
+
+[node name="ComfyBoots" type="Label" parent="Debug/VBoxContainer2"]
+layout_mode = 2
+text = "Speed"
+
+[node name="Cruelty" type="Label" parent="Debug/VBoxContainer2"]
 layout_mode = 2
 text = "Speed"
 

@@ -72,7 +72,7 @@ func _drop_gun():
 	droppedGun.gunRecoil = heldGun.gunRecoil
 	droppedGun.cameraRecoil = heldGun.cameraRecoil
 	droppedGun.scopeFov = heldGun.scopeFov
-	droppedGun.linear_velocity = direction * (1 + PlayerStats.strength)
+	droppedGun.linear_velocity = direction
 
 	get_tree().current_scene.add_child(droppedGun)
 	
@@ -88,6 +88,6 @@ func _hold_object(object):
 
 func _throw_object():
 	holdingObject = false
-	heldObject.linear_velocity = direction * (1 * PlayerStats.strength)
+	heldObject.linear_velocity = direction
 	heldObject.colision.disabled = false
 	heldObject = null

@@ -1,7 +1,6 @@
-[gd_scene load_steps=64 format=4 uid="uid://djntym7vmvwip"]
+[gd_scene load_steps=63 format=4 uid="uid://djntym7vmvwip"]
 
 [ext_resource type="PackedScene" uid="uid://cpmokfsmky3pa" path="res://Scenes/Player.tscn" id="2_ti4x8"]
-[ext_resource type="PackedScene" uid="uid://3682hmwkoi58" path="res://Objects/Map/Window.tscn" id="5_dh6oi"]
 [ext_resource type="PackedScene" uid="uid://tqbxlkgu2ylf" path="res://Objects/Map/Door.tscn" id="5_ybl0o"]
 [ext_resource type="Script" uid="uid://con6piv5xjvfd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="6_k4kkh"]
 [ext_resource type="PackedScene" uid="uid://xt21uw7ybdsj" path="res://Objects/Map/Pot.tscn" id="7_20spf"]
@@ -212,15 +211,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4, 0.3)
 [node name="TopDrop" parent="Stairs" index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4, -0.1)
 
+[node name="Outside" parent="." instance=ExtResource("9_icr5g")]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -8.66588, 2.63851, -7.8707)
+
+[node name="Bottom" parent="Outside" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.58566, 0.3)
+
+[node name="BottomDrop" parent="Outside" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.68566, 0.3)
+
+[node name="Top" parent="Outside" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.7, 0.3)
+
+[node name="TopDrop" parent="Outside" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.7, -0.569678)
+
 [node name="Door" parent="." instance=ExtResource("5_ybl0o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -8)
 
 [node name="StaticBody3D" parent="Door" index="0"]
 locked = true
 Key = "Office Key"
-
-[node name="Window" parent="." instance=ExtResource("5_dh6oi")]
-transform = Transform3D(3.9, 0, 0, 0, 2, 0, 0, 0, 0.491975, -13, 2.6, -8.03357)
 
 [node name="Guns" type="Node3D" parent="."]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -16.1, 0.5, -3.5)
@@ -545,4 +556,5 @@ shape = SubResource("ConvexPolygonShape3D_1augp")
 shape = SubResource("ConvexPolygonShape3D_ywx3e")
 
 [editable path="Stairs"]
+[editable path="Outside"]
 [editable path="Door"]
